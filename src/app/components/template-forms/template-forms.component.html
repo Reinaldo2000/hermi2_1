@@ -1,0 +1,39 @@
+<h1>Formulario Template</h1>
+<hr>
+<form #miFormulario>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Cedula</label>
+        <input class="form-control" id="cedula" name="cedula" [(ngModel)]="datosFormulario.cedula">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Nombre</label>
+        <input class="form-control" id="nombre" name="nombre" [(ngModel)]="datosFormulario.nombre">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Fecha de Nacimiento</label>
+        <input class="form-control" type="date" id="fecha" name="fecha" [(ngModel)]="datosFormulario.fecha">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Ciudad</label>
+        <select class="form-select form-select-sm" aria-label="Small select example" id="ciudad" name="ciudad" [(ngModel)]="datosFormulario.ciudad">
+        <option selected>Seleccione una ciudad</option>
+        <option value="1">Pasaje</option>
+        <option value="2">Machala</option>
+        <option value="3">Loja</option>
+        <option value="4">Guayaquil</option>
+        <option value="5">Quito</option>
+        <option value="6">Cuenca</option>
+        <option value="7">Manta</option>
+        <option value="8">Santo Domingo</option>
+        <option value="9">Babahoyo</option>
+      </select>
+    </div>
+    <div class="button-container">
+        <button type="submit" class="btn btn-primary" (click)="guardar()">OK</button>
+        <span class="button-separator"></span>
+        <button type="button" class="btn btn-primary" (click)="limpiar()">Cancelar</button>
+    </div>
+</form>
+<div class="alert alert-success" *ngIf="mostrarMensaje">
+    Registrado correctamente
+</div>

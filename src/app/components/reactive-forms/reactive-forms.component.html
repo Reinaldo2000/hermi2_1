@@ -1,0 +1,39 @@
+<h1>Formulario Reactive</h1>
+<br>
+<form [formGroup]="miFormulario">
+    <div class="mb-3">
+        <label for="cedula" class="form-label">Cedula</label>
+        <input formControlName="cedula" class="form-control" id="cedula" name="cedula">
+    </div>
+    <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input formControlName="nombre" class="form-control" id="nombre" name="nombre">
+    </div>
+    <div class="mb-3">
+        <label for="fecha" class="form-label">Fecha de Nacimiento</label>
+        <input formControlName="fecha" class="form-control" type="date" id="fecha" name="fecha">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Ciudad</label>
+        <select formControlName="ciudad" class="form-select form-select-sm" aria-label="Small select example" id="ciudad" name="ciudad">
+        <option selected>Seleccione una ciudad</option>
+        <option value="1">Pasaje</option>
+        <option value="2">Machala</option>
+        <option value="3">Loja</option>
+        <option value="4">Guayaquil</option>
+        <option value="5">Quito</option>
+        <option value="6">Cuenca</option>
+        <option value="7">Manta</option>
+        <option value="8">Santo Domingo</option>
+        <option value="9">Babahoyo</option>
+      </select>
+    </div>
+    <div class="button-container">
+        <button type="submit" class="btn btn-primary" (click)="guardar()">OK</button>
+        <span class="button-separator"></span>
+        <button type="button" class="btn btn-primary" (click)="limpiar()">Cancelar</button>
+    </div>
+</form>
+<div class="alert alert-success" *ngIf="mostrarMensaje">
+    Registrado correctamente
+</div>
